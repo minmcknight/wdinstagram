@@ -16,8 +16,8 @@
     <% @entries.each do |entry| %>
       <tr>
         <td><%= entry.author %></td>
-        <td><%= entry.photo_url %></td>
-        <td><%= entry.date_taken %></td>
+        <td><%= image_tag entry.photo_url %></td>
+        <td><%= entry.date_taken.strftime("Taken on %m/%d/%Y") %> </td>
         <td><%= link_to 'Show', entry %></td>
         <td><%= link_to 'Edit', edit_entry_path(entry) %></td>
         <td><%= link_to 'Destroy', entry, method: :delete, data: { confirm: 'Are you sure?' } %></td>
